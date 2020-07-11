@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'home')->name('home');
+
+Route::resource('vacancies', 'VacancyController', ['only' => ['index']]);
+
+Route::resource('resumes', 'ResumeController', ['only' => ['index']]);
